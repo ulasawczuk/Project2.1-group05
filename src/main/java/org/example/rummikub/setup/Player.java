@@ -20,6 +20,7 @@ public class Player {
         }
         return stringHand;
     }
+    
 
     //TODO sorting method for players hand (both ways runs and rows)
 }

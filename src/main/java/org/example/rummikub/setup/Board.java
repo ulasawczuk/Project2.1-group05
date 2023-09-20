@@ -32,5 +32,16 @@ public class Board {
         }
     }
 
+    public ArrayList<ArrayList<String>> getList(){
+        ArrayList<ArrayList<String>> listToString = new ArrayList<>();
+        for(int i = 0; i<seriesInGame.size();i++){
+            listToString.add(new ArrayList<String>());
+            for(int j = 0;j < seriesInGame.get(i).size();j++){
+                listToString.get(i).add(seriesInGame.get(i).get(j).toString());
+            }
+        }
+        return listToString;
+    }
+
 
 }

@@ -17,4 +17,8 @@ public class Tile {
         return value;
     }
 
+    public String toString(){
+        return getValue().toString() + " " + getColour().toString();
+    }
+
 }

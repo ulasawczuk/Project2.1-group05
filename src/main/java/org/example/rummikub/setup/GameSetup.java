@@ -18,13 +18,11 @@ public class GameSetup {
         for (Player player : game.players) {
             System.out.println(player.getHand());
         }
-        for (Tile tile : game.tiles) {
-            System.out.println(tile);
-        }
-        /*
-        Board board = new Board()
-        BoardOverhead overHead = new BoardOverhead();
-         */
+
+
+        Board board = new Board();
+        BoardOverhead overHead = new BoardOverhead(board,game.players);
+
 
     }
 
@@ -52,9 +50,14 @@ public class GameSetup {
                    tiles.add(new Tile(c,v));
             }
         }
+
+        System.out.println(tiles.size());
+
         // Delete 6 Jokers
         for (int i = 0; i < 6; i ++) {
-            tiles.remove(13 * (i + 1) );
+            tiles.remove(13 * (i + 1));
         }
+        System.out.println(tiles.size());
+        System.out.println(tiles.get(13));
     }
 }

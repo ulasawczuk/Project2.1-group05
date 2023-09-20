@@ -19,6 +19,4 @@ public class BoardOverhead {
          if(players.contains(player)) players.remove(player);
      }
 
-
-
 }

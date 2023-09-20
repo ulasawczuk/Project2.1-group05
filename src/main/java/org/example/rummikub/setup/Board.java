@@ -31,6 +31,8 @@ public class Board {
         }
     }
 
+
+    //returns the current board as strings
     public ArrayList<ArrayList<String>> getList(){
         ArrayList<ArrayList<String>> listToString = new ArrayList<>();
         for(int i = 0; i<seriesInGame.size();i++){

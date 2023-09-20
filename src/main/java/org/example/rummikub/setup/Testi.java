@@ -25,6 +25,7 @@ public class Testi {
             toConvert.get(i).add(t4);
             toConvert.get(i).add(t5);
             toConvert.get(i).add(t6);
+            toConvert.get(i).add(t3);
         }
 
         Board game = new Board(toConvert);

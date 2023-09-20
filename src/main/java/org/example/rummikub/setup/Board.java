@@ -1,8 +1,6 @@
 package org.example.rummikub.setup;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.LinkedList;
 
 public class Board {
 
@@ -12,6 +10,7 @@ public class Board {
     //2D arraylist grid representing the runs and rows
     private ArrayList<ArrayList<Tile>> currentGameBoard;
 
+    //Constructor for the board
     public Board(ArrayList<ArrayList<Tile>> listOfTiles){
         currentGameBoard = listOfTiles;
     }

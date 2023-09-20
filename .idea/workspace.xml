@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="69062f1f-c708-4b96-b80c-bb3f3a3b57b0" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/rummikub/setup/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/rummikub/setup/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/rummikub/setup/Tile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/rummikub/setup/Tile.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,9 +39,22 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.Board">
+  <component name="RunManager" selected="Application.GameSetup">
     <configuration name="Board" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.rummikub.setup.Board" />
+      <module name="Project2.1-group05.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.rummikub.setup.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GameSetup" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.rummikub.setup.GameSetup" />
       <module name="Project2.1-group05.main" />
       <extension name="coverage">
         <pattern>
@@ -68,6 +81,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.GameSetup" />
         <item itemvalue="Application.Board" />
         <item itemvalue="Application.Testi" />
       </list>

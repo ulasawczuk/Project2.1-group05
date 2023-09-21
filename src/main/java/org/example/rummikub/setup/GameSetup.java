@@ -16,6 +16,7 @@ public class GameSetup {
             game.players.add(new Player(game.generateHand()));
         }
         for (Player player : game.players) {
+            player.sortByColour(player.hand);
             System.out.println(player.getHand());
         }
 

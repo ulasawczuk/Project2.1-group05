@@ -13,12 +13,8 @@ public class Player {
 
     public void removeTile(Tile tile){ if(hand.contains(tile)) {hand.remove(tile); }; }
 
-    public ArrayList<String> getHand(){
-        ArrayList<String> stringHand = new ArrayList<>();
-        for(Tile tile: hand){
-            stringHand.add(tile.toString());
-        }
-        return stringHand;
+    public ArrayList<Tile> getHand(){
+        return hand;
     }
 
     //sorts the tiles by number using quicksort
@@ -95,6 +91,17 @@ public class Player {
             }
         }
         return separated;
+    }
+
+    @Override
+    public String toString() {
+        String str = "";
+        str += "Index " + 0 + ":  " + hand.get(0).toString() + "  ";
+        for (int i = 1; i < hand.size(); i ++) {
+            str += "Index " + i + ":  " + hand.get(i).toString() + "  ";
+            if (hand.get(i).getColour() == hand.get(i-1).getColour()) str += "\n";
+        }
+        return str;
     }
 
 }

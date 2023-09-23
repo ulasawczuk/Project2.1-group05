@@ -2,6 +2,9 @@ package org.example.rummikub.setup;
 
 import javax.naming.PartialResultException;
 import javax.swing.*;
+
+import org.example.rummikub.setup.Exceptions.InvalidTilePlacement;
+
 import java.util.ArrayList;
 import java.util.concurrent.Callable;
 
@@ -19,6 +22,22 @@ public class Board {
     }
 
     public Board(){};
+
+    public boolean addPeaceToBoard (int x, int y, Tile tl) throws InvalidTilePlacement{
+        // Every row will always have at least two null objects in every line so that you can either
+        // continue the current series or start a new one
+        if (x >= currentGameBoard.size()) {
+            throw new InvalidTilePlacement("The Board doesnt have that many rows");
+        } else if (y >= currentGameBoard.get(x).size()){
+            throw new InvalidTilePlacement("The Board doesnt have that many columns in this row");
+        } else if (currentGameBoard.get(x).get(y) != null) {
+            throw new InvalidTilePlacement ("The place you chose to put your tile already has a tl.\nWe will enable theswitching of tiles soon");
+        }
+
+
+        currentGameBoard.get(x).add(y,tl);
+        return true;
+    }
 
     //Method that converts from 2d array used in GUI to an arraylist of series
     public void convert(ArrayList<ArrayList<Tile>> currentGameBoard){
@@ -39,9 +58,10 @@ public class Board {
 
     public boolean boardVerifier(){
         Tile tile1 = null, tile2 = null;
+        convert(currentGameBoard);
         for(int i = 0; i < seriesInGame.size();i++){
             if (seriesInGame.get(i).size() < 3) {return false;}
-            //index of a first tile which is not a joker
+            //index of a first tl which is not a joker
             int indexTile1 = 0;
             //loop assigning values of first two tiles not being a joker
             for(int j = 0; j < seriesInGame.get(i).size();j++){
@@ -55,7 +75,7 @@ public class Board {
                     break;
                 }
             }
-            //case where there were two joker and one tile
+            //case where there were two joker and one tl
             if (tile2 == null) continue;
 
             //checking whether we are checking a group or a run
@@ -105,6 +125,18 @@ public class Board {
             }
         }
         return listToString;
+    }
+
+    @Override
+    public String toString() {
+        String str = "";
+        for (int i = 0; i < currentGameBoard.size(); i ++) {
+            str+=  i + "  ";
+            str += currentGameBoard.get(i).toString() + "  ";
+            
+            str += "\n";
+        }
+        return str;
     }
 
     public static void main(String[] args) {
